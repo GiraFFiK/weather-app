@@ -5,7 +5,7 @@ export default function WeatherSection({ current, daily, hourly, city, country, 
 
     //разобраться с этим
     const temp = current.temperature;
-    const feelsLike = Math.round(current.feelsLike);
+    const feelsLike = current.feelsLike;
     const hum = Math.round(current.humidity);
     const wind = current.windSpeed;
     const prec = current.precipitation;
