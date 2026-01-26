@@ -113,7 +113,7 @@ export default function App() {
       if (!data.results || data.results.length === 0) {
         setError(true);
         setSuccess(false);
-        setLoading(true);
+        setLoading(false);
         return ({ success: false });
       }
       const city = data.results[0];
