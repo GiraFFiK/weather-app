@@ -69,7 +69,7 @@ button {
 .header__button::before {
   position: absolute;
   content: "";
-  background: url('../public/icon-units.svg') no-repeat;
+  background: url('./assets/icon-units.svg') no-repeat;
   width: 16px;
   height: 16px;
   top: 21px;
@@ -80,7 +80,7 @@ button {
 .header__button::after {
   position: absolute;
   content: "";
-  background: url('../public/icon-dropdown.svg') 0 0 no-repeat;
+  background: url('./assets/icon-dropdown.svg') 0 0 no-repeat;
   width: 13px;
   height: 18px;
   top: 27px;
@@ -266,6 +266,34 @@ button {
   background-color: hsl(243, 23%, 24%);
 }
 
+.suggestions {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  background: hsl(243, 27%, 20%);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 4px;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.suggestions__item {
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 24px;
+}
+
+.suggestions__item:last-child {
+  border-bottom: none;
+}
+
+.suggestions__item:hover {
+  background-color: hsl(243, 23%, 24%);
+}
+
 .searching__field {
   position: relative;
   display: flex;
@@ -298,9 +326,9 @@ button {
   margin: 0 auto 1.5rem;
 }
 
-.spinner img{
+.spinner img {
   width: 50px;
-  
+
 }
 
 .loading-text {
@@ -311,16 +339,27 @@ button {
   font-family: Bricolage Grotesque;
 }
 
-.loading-text::after{
+.loading-text::after {
   content: '.';
   animation: dots 1.5s steps(5, end) infinite;
 }
 
 @keyframes dots {
-  0%, 20% { content: '.'; }
-  40% { content: '..'; }
-  60% { content: '...'; }
-  80%, 100% { content: ''; }
+  0%, 20% {
+    content: '.';
+  }
+
+  40% {
+    content: '..';
+  }
+
+  60% {
+    content: '...';
+  }
+
+  80%, 100% {
+    content: '';
+  }
 }
 
 @keyframes spin {
@@ -336,7 +375,7 @@ button {
 .searching__wrapper::before {
   position: absolute;
   content: "";
-  background: url('../public/icon-search.svg') 0 0 no-repeat;
+  background: url('./assets/icon-search.svg') 0 0 no-repeat;
   width: 21px;
   height: 21px;
   top: 10px;
@@ -372,7 +411,7 @@ button {
 }
 
 .weather__main__info {
-  background: url('../public/bg-today-large.svg') 0 0 no-repeat;
+  background: url('./assets/bg-today-large.svg') 0 0 no-repeat;
   background-size: cover;
   min-width: 850px;
   min-height: 286px;
@@ -676,31 +715,31 @@ button {
     width: 100%;
   }
 
-  
+
 }
 
 @media (max-width: 1366px) {
 
-  .weather__inner{
+  .weather__inner {
     gap: 20px;
   }
 
-  .weather__main{
+  .weather__main {
     min-width: 700px;
   }
 
   .weather__hour {
     min-width: min(450px, 90vw);
-    
+
   }
 
-  .weather__daily__forecast{
+  .weather__daily__forecast {
     gap: 10px;
   }
 }
 
-@media(max-width: 1280px){
-  .weather__hour{
+@media(max-width: 1280px) {
+  .weather__hour {
     min-width: 400px;
   }
 }
@@ -745,7 +784,7 @@ button {
     font-size: 16px;
   }
 
-  
+
   .forecast__list {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
@@ -754,7 +793,7 @@ button {
   .weather__daily__forecast {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    
+
   }
 
   .daily__forecast__item {
@@ -791,6 +830,11 @@ button {
     display: block;
   }
 
+  .suggestions {
+    overflow-y: scroll;
+    max-height: 300px;
+  }
+
   .searching__field {
     flex-direction: column;
     align-items: center;
@@ -811,7 +855,7 @@ button {
     flex-shrink: 0;
   }
 
-  .weather__main{
+  .weather__main {
     min-width: 0px;
   }
 
@@ -859,15 +903,15 @@ button {
     min-width: 120px;
   }
 
-  .weather__icon{
+  .weather__icon {
     margin-right: 0;
-    
+
   }
 }
 
 /* Mobile phones: 576px - 767px */
 @media (max-width: 580px) {
-  
+
   .searching__field {
     flex-direction: column;
     align-items: center;
@@ -889,7 +933,7 @@ button {
     padding: 15px 20px;
     flex-direction: column;
     gap: 15px;
-    
+
   }
 
   .weather__main__info__citydata {
@@ -913,7 +957,7 @@ button {
   }
 
   .weather__icon {
-    
+
     margin-right: 0;
   }
 
@@ -985,7 +1029,7 @@ button {
     gap: 10px;
   }
 
-  
+
 
   .hourly__forecast__scrollable {
     max-height: 400px;
@@ -997,16 +1041,39 @@ button {
     min-width: 100px;
   }
 
-  
 
-  .empty__message{
+
+  .empty__message {
     font-size: 24px;
   }
 
-  .error-message{
+  .error-message {
     font-size: 20px;
   }
 }
+
+@media (max-width: 360px) {
+  .searching__button{
+    width: 300px;
+  }
+  .searching__input{
+    min-width: 300px;
+  }
+  .weather__hour{
+    min-width: 300px;
+  }
+  .header__inner{
+    flex-direction: column;
+  }
+  .searching__inner{
+    margin-top: 20px;
+  }
+  .units__dropdown{
+    right: -100px;
+    left: -100px;
+  }
+}
+
 
 
 
@@ -1042,5 +1109,5 @@ button {
     color: #213547;
   }
 
-  
+
 }

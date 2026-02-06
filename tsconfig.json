@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    // Для Vite важно использовать эти настройки модулей:
+    "target": "es2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    
+    // Настройки для Vite
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    
+    // JSX для React
+    "jsx": "react-jsx",
+    
+    // Для постепенной миграции с JS:
+    "allowJs": true,
+    "checkJs": true,
+    
+    // Strict mode - можно начать с false для плавной миграции
+    "strict": true,
+    
+    // Дополнительные настройки
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    
+    // Для импортов без расширений
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": [
+    "src",
+    "*.d.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
+}
